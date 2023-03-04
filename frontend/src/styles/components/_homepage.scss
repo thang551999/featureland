@@ -1,0 +1,11 @@
+.homepage {
+  &__thumbnail {
+    .thumbnail-image {
+      width: 100%;
+    }
+    .thumbnail-content {
+      position: absolute;
+      top: 30%;
+    }
+  }
+}

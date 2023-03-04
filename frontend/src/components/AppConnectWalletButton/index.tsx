@@ -4,13 +4,10 @@ import {
   setConnectingMetamask,
   setShowInstallMetamask,
 } from '@/redux/connection/slice';
-import { shortenString } from '@/utils/helper';
-import { useWeb3React } from '@web3-react/core';
 import { Button } from 'antd';
 import { useEffect, useState } from 'react';
 
 export default function AppConnectWalletButton() {
-  const { active, account } = useWeb3React();
   const connectInjected = useConnectWallet();
   const [installedMetamask, setInstalledMetamask] = useState(false);
   const dispatch = useAppDispatch();
@@ -35,9 +32,5 @@ export default function AppConnectWalletButton() {
     }
   };
 
-  return (
-    <Button onClick={connectWallet}>
-      {active && account ? shortenString(account) : 'Connect Wallet'}
-    </Button>
-  );
+  return <Button onClick={connectWallet}>Connect Wallet</Button>;
 }

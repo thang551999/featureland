@@ -1,0 +1,37 @@
+{
+  "name": "frontend",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@ethersproject/providers": "^5.7.2",
+    "@reduxjs/toolkit": "^1.9.3",
+    "@web3-react/core": "^6.1.9",
+    "antd": "^5.2.3",
+    "dayjs": "^1.11.7",
+    "next": "13.2.3",
+    "next-redux-wrapper": "^8.1.0",
+    "next-seo": "^5.15.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-query": "^3.39.3",
+    "react-redux": "^8.0.5",
+    "redux-persist": "^6.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "18.14.6",
+    "@types/react": "18.0.28",
+    "@types/react-dom": "18.0.11",
+    "@types/redux-persist": "^4.3.1",
+    "eslint": "8.35.0",
+    "eslint-config-next": "13.2.3",
+    "sass": "^1.58.3",
+    "sass-loader": "^13.2.0",
+    "typescript": "4.9.5"
+  }
+}

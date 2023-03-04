@@ -10,6 +10,7 @@ import { wrapper } from "@/redux/configStore";
 import { LIBRARY_CONSTANTS } from "@/constants/library";
 
 import '../styles/_app.scss';
+import AppConnectWalletWrapper from '@/components/AppConnectWalletWrapper';
 
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
   getLayout?: (page: ReactElement) => ReactNode
@@ -37,7 +38,9 @@ const MyApp = ({ Component, ...rest }: AppPropsWithLayout) => {
       <QueryClientProvider client={queryClient}>
         <Web3ReactProvider getLibrary={LIBRARY_CONSTANTS.getLibrary}>
           <PersistGate persistor={persistStore(store)} loading={false}>
-            {getLayout(<Component {...props} />)}
+            <AppConnectWalletWrapper>
+              {getLayout(<Component {...props} />)}
+            </AppConnectWalletWrapper>
           </PersistGate>
         </Web3ReactProvider>
       </QueryClientProvider>

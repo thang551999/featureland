@@ -22,9 +22,12 @@ export const AuthenticationSlice = createSlice({
         address: action.payload,
       }
     },
+    logout: () => {
+      return initialState;
+    }
   },
 });
 
-export const { setToken, setAddress } = AuthenticationSlice.actions;
+export const { setToken, setAddress, logout } = AuthenticationSlice.actions;
 
 export default AuthenticationSlice;

@@ -1,6 +1,5 @@
-import { GetServerSideProps } from "next";
 import { ReactElement } from "react"
-import GeneralLayout from "../../layout/General"
+import GeneralLayout from "../layout/General"
 
 function HomePage() {
   return <div>Welcome to.jsfdsdf!</div>

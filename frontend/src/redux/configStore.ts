@@ -1,4 +1,4 @@
-import { combineReducers, configureStore } from "@reduxjs/toolkit";
+import { AnyAction, combineReducers, configureStore, Dispatch } from "@reduxjs/toolkit";
 import { createWrapper } from "next-redux-wrapper";
 import {
   FLUSH,
@@ -27,3 +27,9 @@ const makeStore = (preloadedState = {}) => {
 } 
 
 export const wrapper = createWrapper(makeStore, { debug: false });
+
+export type AppState = ReturnType<AppStore['getState']>;
+
+export type AppStore = ReturnType<typeof makeStore>;
+export type RootState = ReturnType<AppStore['getState']>;
+export type AppDispatch = Dispatch<AnyAction>;

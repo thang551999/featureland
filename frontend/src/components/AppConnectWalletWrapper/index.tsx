@@ -1,20 +1,20 @@
+import Image from 'next/image';
 import { ReactNode, useEffect } from 'react';
-import { InjectedConnector } from '@web3-react/injected-connector';
-import { useAppDispatch, useAppSelector } from '@/hooks/useStore';
-import ModalWrongNetwork from '@/components/Modal/WrongNetwork';
-import { isSupportChainId } from '@/utils/wallet';
 import { useWeb3React } from '@web3-react/core';
+import ModalWrongNetwork from '@/components/Modal/WrongNetwork';
+import { logout } from '@/redux/authentication/slice';
 import { setWrongNetwork } from '@/redux/connection/slice';
+import selectorApplication from '@/redux/application/selector';
+import { useAppDispatch, useAppSelector } from '@/hooks/useStore';
 import selectorAuthentication from '@/redux/authentication/selector';
-import { logout, setToken } from '@/redux/authentication/slice';
+import { injected } from '@/constants/connectors';
+import { isSupportChainId } from '@/utils/wallet';
 import { getAuthority } from '@/services/wallet.service';
 import LocalStorageService from '@/services/localStorage.service';
-import Image from 'next/image';
-import selectorApplication from '@/redux/application/selector';
+import ModalInstallMetamask from '../Modal/InstallMetamask';
 
 const AppConnectWalletWrapper = ({ children }: { children: ReactNode }) => {
   const dispatch = useAppDispatch();
-  const injected = new InjectedConnector({});
   const { library, chainId, account, active, deactivate, activate } =
     useWeb3React();
   const { isLoading } = useAppSelector(selectorApplication.getApplication);
@@ -49,8 +49,9 @@ const AppConnectWalletWrapper = ({ children }: { children: ReactNode }) => {
 
   // check network
   useEffect(() => {
+    console.log(chainId);
     if (active) {
-      dispatch(setWrongNetwork(isSupportChainId(chainId)));
+      dispatch(setWrongNetwork(!isSupportChainId(chainId)));
     }
   }, [chainId, active]);
 
@@ -88,6 +89,7 @@ const AppConnectWalletWrapper = ({ children }: { children: ReactNode }) => {
         </div>
       )}
       {children}
+      <ModalInstallMetamask />
       <ModalWrongNetwork />
     </>
   );

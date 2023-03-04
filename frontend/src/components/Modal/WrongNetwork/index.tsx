@@ -20,11 +20,20 @@ const ModalWrongNetwork = () => {
   }, [isWrongNetwork]);
 
   return (
-    <Modal open={isWrongNetwork} maskClosable={false} closable={false}>
+    <Modal
+      open={isWrongNetwork}
+      maskClosable={false}
+      closable={false}
+      footer={null}
+      className="modal-connect-wallet"
+    >
       <div className="wrong-network-notice center-flex-item">
-        <Image src="/images/wrong_network.png" alt="" />
+        <Image src="/images/wrong_network.png" alt="" width={90} height={90} />
         <h1>Wrong network</h1>
-        <div className="wrong-network-notice__des">Wrong network content</div>
+        <div className="wrong-network-notice__des">
+          Please change network on Metamask to Binance Smart Chain- Mainnet to
+          continue.
+        </div>
       </div>
     </Modal>
   );

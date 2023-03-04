@@ -1,0 +1,92 @@
+.wrong-network-notice {
+  flex-direction: column;
+  h1 {
+    color: $color_text_link_2;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 33px;
+  }
+  &__des {
+    text-align: center;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    max-width: 400px;
+    color: $color_table_description;
+  }
+}
+
+.connectWallet {
+  @extend .wrong-network-notice;
+  &__des {
+    @extend .wrong-network-notice__des;
+    &.mb-2 {
+      margin-bottom: 16px;
+    }
+  }
+  &__method {
+    position: relative;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    width: 80%;
+    height: 60px;
+    background: $color_background_2;
+    padding: 11px 16px;
+    border-radius: 8px;
+    border: 1px solid $color_background_5;
+
+    &-name {
+      color: $color_white_1;
+      font-weight: 600;
+      font-size: 18px;
+      margin-left: 10px;
+      margin-right: 30px;
+    }
+
+    &-more {
+      position: absolute;
+      right: 10px;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &-installMetamask {
+    margin-top: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: $color_background_3;
+    color: $color_white_1;
+    padding: 10px 20px;
+    border-radius: 40px;
+    border: 1px solid $color_background_5;
+
+    div {
+      margin-left: 5px;
+      color: $color_text_link_blue_1;
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.modal-connect-wallet {
+  .ant-modal-content {
+    background-color: #16181c;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  .anticon-close {
+    svg {
+      fill: white;
+    }
+  }
+}

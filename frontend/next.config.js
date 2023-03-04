@@ -8,6 +8,9 @@ const nextConfig = {
   sassOptions: {
     includePaths: [path.join(__dirname, 'styles')],
   },
-}
+  env: {
+    NEXT_PUBLIC_CHAIN_ID: 97,
+  },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

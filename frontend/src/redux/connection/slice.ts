@@ -2,7 +2,8 @@ import { createSlice } from '@reduxjs/toolkit';
 import { Connection, IAction } from '../types';
 
 const initialState: Connection = {
-  isShowConnectModal: false,
+  isConnectingMetamask: false,
+  showInstallMetamask: false,
   isWrongNetwork: false,
 };
 
@@ -10,10 +11,16 @@ export const ConnectionSlice = createSlice({
   name: 'connection',
   initialState,
   reducers: {
-    setConnectModal: (state, action: IAction<boolean>) => {
+    setConnectingMetamask: (state, action: IAction<boolean>) => {
       return {
         ...state,
-        isShowConnectModal: action.payload,
+        isConnectingMetamask: action.payload,
+      };
+    },
+    setShowInstallMetamask: (state, action: IAction<boolean>) => {
+      return {
+        ...state,
+        showInstallMetamask: action.payload,
       };
     },
     setWrongNetwork: (state, action: IAction<boolean>) => {
@@ -25,6 +32,10 @@ export const ConnectionSlice = createSlice({
   },
 });
 
-export const { setConnectModal, setWrongNetwork } = ConnectionSlice.actions;
+export const {
+  setConnectingMetamask,
+  setShowInstallMetamask,
+  setWrongNetwork,
+} = ConnectionSlice.actions;
 
 export default ConnectionSlice;

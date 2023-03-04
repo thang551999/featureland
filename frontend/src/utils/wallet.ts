@@ -1,4 +1,8 @@
-import { APP_NETWORKS_SUPPORT, SupportedChainId, SUPPORTED_CHAIN_IDS } from "@/constants/connectors";
+import {
+  APP_NETWORKS_SUPPORT,
+  SupportedChainId,
+  SUPPORTED_CHAIN_IDS,
+} from '@/constants/connectors';
 
 declare let window: any;
 
@@ -31,6 +35,7 @@ export const setupNetwork = async (chainId: SupportedChainId) => {
                 ],
               });
             } catch (addError) {
+              console.log(addError);
               return false;
             }
           } else {

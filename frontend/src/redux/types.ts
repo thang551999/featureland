@@ -9,7 +9,8 @@ export interface Authentication {
 }
 
 export interface Connection {
-  isShowConnectModal: boolean;
+  isConnectingMetamask: boolean;
+  showInstallMetamask: boolean;
   isWrongNetwork: boolean;
 }
 

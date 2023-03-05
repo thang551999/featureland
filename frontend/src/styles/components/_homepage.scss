@@ -1,11 +1,27 @@
 .homepage {
+  position: relative;
   &__thumbnail {
     .thumbnail-image {
       width: 100%;
     }
     .thumbnail-content {
       position: absolute;
-      top: 30%;
+      top: 25%;
+      padding-left: 113px;
+      h1 {
+        margin: 0;
+        font-size: 54px;
+        font-weight: 400;
+        line-height: 81px;
+        color: #111827;
+      }
+      h4 {
+        margin-top: 8px;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 19.2px;
+        color: #6d7280;
+      }
     }
   }
 }

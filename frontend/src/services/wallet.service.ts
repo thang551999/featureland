@@ -40,6 +40,7 @@ export const getAuthority = async (
       console.error('[getAuthority] error', err);
       return { deniedSignature: true };
     } finally {
+      console.log(123123);
       hasLoading && dispatch(setLoading(false));
     }
   }

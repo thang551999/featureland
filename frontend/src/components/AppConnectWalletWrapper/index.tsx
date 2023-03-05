@@ -12,12 +12,16 @@ import { isSupportChainId } from '@/utils/wallet';
 import { getAuthority } from '@/services/wallet.service';
 import LocalStorageService from '@/services/localStorage.service';
 import ModalInstallMetamask from '../Modal/InstallMetamask';
+import selectorConnection from '@/redux/connection/selector';
 
 const AppConnectWalletWrapper = ({ children }: { children: ReactNode }) => {
   const dispatch = useAppDispatch();
   const { library, chainId, account, active, deactivate, activate } =
     useWeb3React();
   const { isLoading } = useAppSelector(selectorApplication.getApplication);
+  const { isConnectingMetamask } = useAppSelector(
+    selectorConnection.getConnection
+  );
   const { address, token } = useAppSelector(
     selectorAuthentication.getAuthentication
   );
@@ -49,7 +53,6 @@ const AppConnectWalletWrapper = ({ children }: { children: ReactNode }) => {
 
   // check network
   useEffect(() => {
-    console.log(chainId);
     if (active) {
       dispatch(setWrongNetwork(!isSupportChainId(chainId)));
     }
@@ -77,7 +80,7 @@ const AppConnectWalletWrapper = ({ children }: { children: ReactNode }) => {
 
   return (
     <>
-      {isLoading && (
+      {(isLoading || isConnectingMetamask) && (
         <div className="loading-wrapper">
           <Image
             className={'loading-icon'}

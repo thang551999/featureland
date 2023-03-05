@@ -1,4 +1,5 @@
 import Community from '@/components/pages/HomePage/Community';
+import ContactUs from '@/components/pages/HomePage/Contact';
 import DiscoverAreas from '@/components/pages/HomePage/DiscoverAreas';
 import HomePageThumbnail from '@/components/pages/HomePage/Thumbnail';
 import { ReactElement } from 'react';
@@ -10,6 +11,7 @@ function HomePage() {
       <HomePageThumbnail />
       <DiscoverAreas />
       <Community />
+      <ContactUs />
     </div>
   );
 }

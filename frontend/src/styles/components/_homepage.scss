@@ -136,3 +136,25 @@
     }
   }
 }
+.contact-us {
+  margin-top: 185px;
+  gap: 6%;
+  .contact-col {
+    max-width: 485px;
+    textarea {
+      resize: none;
+    }
+  }
+  .contact-title {
+    font-size: 54px;
+    font-weight: 400;
+    line-height: 81px;
+    margin-bottom: 16px;
+  }
+  .contact-info {
+    font-size: 16px;
+    line-height: 19.2px;
+    color: #6d7280;
+    font-weight: 400;
+  }
+}

@@ -42,6 +42,7 @@ const MyApp = ({ Component, ...rest }: AppPropsWithLayout) => {
             theme={{
               token: {
                 fontFamily: 'Orbitron',
+                colorText: '#111827',
               },
             }}
           >

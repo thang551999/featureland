@@ -6,12 +6,14 @@ type ScrollWhenClickProps = {
   children: ReactNode;
   scrollSize?: number;
   gap?: number;
+  justifyContent?: string;
 };
 
 export default function ScrollWhenClick({
   children,
   scrollSize = 400,
   gap = 54,
+  justifyContent = 'start',
 }: ScrollWhenClickProps) {
   const [scrollLeft, setScrollLeft] = useState(0);
   const elementRef = useRef<HTMLDivElement>(null);
@@ -79,7 +81,11 @@ export default function ScrollWhenClick({
       >
         <Image src="/svg/arrow-right.svg" preview={false} />
       </div>
-      <div ref={elementRef} className="scroll-children" style={{ gap: gap }}>
+      <div
+        ref={elementRef}
+        className="scroll-children"
+        style={{ gap: gap, justifyContent: justifyContent }}
+      >
         {children}
       </div>
     </div>

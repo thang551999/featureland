@@ -27,7 +27,16 @@ export default function HomePageThumbnail() {
                   <AppConnectWalletButton />
                 </Col>
               )}
-              <Col>Try it now</Col>
+              <Col
+                style={{
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  marginLeft: 24,
+                  display: 'flex',
+                }}
+              >
+                Try it now
+              </Col>
             </Row>
           </Col>
         </Row>

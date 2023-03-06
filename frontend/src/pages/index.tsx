@@ -1,3 +1,4 @@
+import AboutTeams from '@/components/pages/HomePage/AboutTeams';
 import Community from '@/components/pages/HomePage/Community';
 import ContactUs from '@/components/pages/HomePage/Contact';
 import DiscoverAreas from '@/components/pages/HomePage/DiscoverAreas';
@@ -11,6 +12,7 @@ function HomePage() {
       <HomePageThumbnail />
       <DiscoverAreas />
       <Community />
+      <AboutTeams />
       <ContactUs />
     </div>
   );

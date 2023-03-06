@@ -1,3 +1,4 @@
+import AppButton from '@/components/AppButton';
 import { Button, Col, Form, Input, Row } from 'antd';
 
 export default function ContactUs() {
@@ -44,9 +45,7 @@ export default function ContactUs() {
             />
           </Form.Item>
           <Form.Item>
-            <Button type="primary" htmlType="submit">
-              Send
-            </Button>
+            <AppButton htmlType={'submit'} variant="primary" text="Send" />
           </Form.Item>
         </Form>
       </Col>

@@ -1,9 +1,7 @@
 import ScrollWhenClick from '@/components/ScrollWhenClick';
-import { useWindowSize } from '@/hooks/useWindowSize';
 import Member from './Member';
 
 export default function AboutTeams() {
-  const { width } = useWindowSize();
   const listOfMembers = [
     {
       name: `Member's name`,
@@ -48,7 +46,7 @@ export default function AboutTeams() {
       <div className="areas">
         <ScrollWhenClick
           gap={24}
-          justifyContent={width >= 1847 ? 'space-around' : 'start'}
+          // justifyContent={width >= 1847 ? 'space-around' : 'start'}
         >
           {listOfMembers.map((member, index) => (
             <Member {...member} key={index} />

@@ -38,9 +38,14 @@
     margin-right: 108px;
     .area {
       position: relative;
-      flex: 0 0 auto;
+      flex: 1;
+      min-width: 279px;
       white-space: nowrap;
       align-items: center;
+      img {
+        width: 100%;
+        height: auto;
+      }
       &__name {
         position: absolute;
         left: 50%;
@@ -180,22 +185,26 @@
 }
 .member-team {
   position: relative;
+  flex: 1;
+  min-width: 311px;
   .member-image {
     padding: 16px;
+    width: 100% !important;
+    height: 100% !important;
     border: 1px solid black;
     background-color: white;
     border-radius: 16px;
     img {
-      height: 279px !important;
-      width: 279px;
+      height: auto !important;
+      width: 100%;
       border-radius: 8px;
     }
   }
   .overlay {
     z-index: 10;
     position: absolute;
-    width: 279px;
-    height: 279px;
+    height: calc(100% - 34px);
+    width: calc(100% - 34px);
     top: 17px;
     left: 17px;
     border-radius: 8px;
@@ -206,7 +215,7 @@
     position: absolute;
     color: white;
     z-index: 100;
-    width: 231px;
+    width: calc(100% - 80px);
     margin: 0 40px;
     text-align: center;
   }

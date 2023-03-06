@@ -10,14 +10,14 @@ type AreasProps = {
 
 export default function Area({ index, name, image, link }: AreasProps) {
   return (
-    <Link href={link}>
-      <div className="area">
+    <div className="area">
+      <Link href={link}>
         <Image src={image} alt={name} height={279} width={279} />
         <div className="area__name">
           <div className="round-border">{index}</div>
           <div className="name">{name}</div>
         </div>
-      </div>
-    </Link>
+      </Link>
+    </div>
   );
 }

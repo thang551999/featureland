@@ -9,9 +9,9 @@ $color_link_button: black;
 $color_link_button_border: white;
 
 // primary
-$color_primary_button_background: $color_button_yellow_1;
-$color_primary_button: $color_white_1;
-$color_primary_button_border: transparent;
+$color_primary_button_background: black;
+$color_primary_button: white;
+$color_primary_button_border: #848484;
 
 // secondary
 $color_secondary_button_background: transparent;
@@ -94,6 +94,11 @@ $color_disabled_button_border: transparent;
     background-color: $color_primary_button_background;
     color: $color_primary_button;
     border: 1px solid $color_primary_button_border;
+    box-shadow: 0px 2px 0px #848484;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1.25px;
 
     &:focus,
     &:active,

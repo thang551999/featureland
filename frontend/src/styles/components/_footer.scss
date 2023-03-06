@@ -1,0 +1,54 @@
+.footer {
+  background: $color_background_header_footer;
+  height: 268px;
+  padding: 80px 112px 80px 112px;
+  box-sizing: border-box;
+
+  &__content {
+    position: relative;
+    border-top: solid#D2D5DA;
+    border-top-width: 1px;
+    height: 100%;
+
+
+    &__links {
+      margin-top: 24px;
+      margin-bottom: 24px;
+      position: relative;
+      display: flex;
+      justify-content: flex-end;
+
+      &__pages {
+        display: flex;
+        justify-content: space-evenly;
+
+        span {
+          color: $color_text_dark;
+          font-size: 14px;
+          letter-spacing: 1.25px;
+        }
+      }
+
+      &__social-apps {
+        display: flex;
+        justify-content: space-evenly;
+      }
+
+      &__logo {
+        position: absolute;
+        left: 48px
+      }
+    }
+
+    &__license {
+      position: absolute;
+      bottom: 0;
+      font-weight: 400;
+      width: 100%;
+      justify-content: center;
+      display: inline-flex;
+      font-size: 10px;
+      letter-spacing: 1.5px;
+    }
+  }
+}

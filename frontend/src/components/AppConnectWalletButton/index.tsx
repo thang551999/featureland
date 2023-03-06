@@ -7,6 +7,7 @@ import {
 import { sleep } from '@/utils/helper';
 import AppButton from '../AppButton';
 import { useEffect, useState } from 'react';
+
 export default function AppConnectWalletButton() {
   const connectInjected = useConnectWallet();
   const [installedMetamask, setInstalledMetamask] = useState(false);
@@ -31,10 +32,12 @@ export default function AppConnectWalletButton() {
     }
   };
 
-  return <AppButton
-    onClick={connectWallet}
-    text="Connect Wallet"
-    variant="primary"
-    className="app-header__button-container__button"
-  />;
+  return (
+    <AppButton
+      onClick={connectWallet}
+      text="Connect Wallet"
+      variant="primary"
+      className="app-header__button-container__button"
+    />
+  );
 }

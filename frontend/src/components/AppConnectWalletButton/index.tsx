@@ -5,9 +5,8 @@ import {
   setShowInstallMetamask,
 } from '@/redux/connection/slice';
 import { sleep } from '@/utils/helper';
-import { Button } from 'antd';
+import AppButton from '../AppButton';
 import { useEffect, useState } from 'react';
-
 export default function AppConnectWalletButton() {
   const connectInjected = useConnectWallet();
   const [installedMetamask, setInstalledMetamask] = useState(false);
@@ -32,5 +31,10 @@ export default function AppConnectWalletButton() {
     }
   };
 
-  return <Button onClick={connectWallet}>Connect Wallet</Button>;
+  return <AppButton
+    onClick={connectWallet}
+    text="Connect Wallet"
+    variant="primary"
+    className="app-header__button-container__button"
+  />;
 }

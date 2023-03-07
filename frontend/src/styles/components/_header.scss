@@ -32,10 +32,17 @@
     display: flex;
     justify-content: space-evenly;
 
-    span {
+    .active_page {
       color: $color_text_dark;
+      font-weight: 600;
+    }
+
+    &__text {
+      color: $color_text_link_page;
       font-size: 14px;
       letter-spacing: 1.25px;
+      font-weight: 500;
+      margin: 4px;
     }
   }
   .app-header-dropdown {

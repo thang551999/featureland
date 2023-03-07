@@ -1,0 +1,108 @@
+.plot-list-item {
+  border: 1px solid black;
+  border-radius: 8px;
+  padding: 11px 16px 20px;
+  box-shadow: 0px 2px 0px #848484;
+  .plot-image {
+    border: 1px solid #6d7280;
+    background-color: white;
+    border-radius: 6px;
+  }
+  .plot-id {
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 8px;
+    margin-bottom: 4px;
+  }
+  .plot-quantity {
+    font-family: 'Poppins';
+    font-size: 12px;
+    font-weight: 400;
+    color: #787878;
+    strong {
+      color: black;
+    }
+  }
+}
+
+.area-detail {
+  .ant-breadcrumb {
+    margin-left: 115px;
+    margin-top: 52px;
+    .ant-breadcrumb-link,
+    .ant-breadcrumb-separator {
+      font-size: 18px;
+    }
+  }
+  .area-general-info {
+    margin-bottom: 78px;
+    padding-left: 8.3%;
+    padding-right: 8.3%;
+  }
+  .area-title {
+    font-size: 54px;
+    line-height: 54px;
+    font-weight: 400;
+    margin-left: 78px;
+    padding-left: 34px;
+    padding-right: 34px;
+    bottom: -10px;
+    background-color: white;
+    position: absolute;
+  }
+  .area-title-underline {
+    position: relative;
+    border-bottom: 4px solid black;
+    height: 106px;
+    margin-bottom: 90px;
+  }
+  .area-select {
+    width: fit-content;
+  }
+  .area-thumbnail-img {
+    width: 100%;
+    padding: 24px;
+    border: 1px solid black;
+    border-radius: 16px;
+  }
+  .area-name {
+    font-size: 54px;
+    font-weight: 400;
+    text-transform: uppercase;
+    height: 81px;
+    margin-bottom: 8px;
+  }
+  .area-stat {
+    font-weight: 400;
+    margin-top: 12px;
+    font-family: 'Poppins';
+    color: #6d7280;
+  }
+  .hr {
+    margin: 24px 0;
+  }
+  .area-description {
+    color: #111111;
+    font-size: 16px;
+    font-weight: 700;
+  }
+  .area-description-content {
+    @extend .area-stat;
+    height: 49px;
+    line-height: 17px;
+    margin-bottom: 12px;
+  }
+}
+
+.area-plot-listing {
+  margin-bottom: 40px;
+  .title {
+    font-size: 24px;
+    font-weight: 600;
+  }
+}
+
+.area-thumbnail,
+.area-info {
+  max-width: 720px;
+}

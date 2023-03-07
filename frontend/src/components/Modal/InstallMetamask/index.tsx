@@ -1,4 +1,4 @@
-import { Modal } from 'antd';
+import { Image, Modal } from 'antd';
 import { METAMASK_DEEPLINK } from '@/constants/connectors';
 import selectorConnection from '@/redux/connection/selector';
 import { setShowInstallMetamask } from '@/redux/connection/slice';
@@ -31,13 +31,13 @@ export default function ModalInstallMetamask() {
           It seems that you have not installed Metamask
         </div>
         <div className="connectWallet__des mb-2">Please install now</div>
-        <img src="/svg/metamask.svg" />
+        <Image src="/svg/metamask.svg" preview={false} alt="metamask-icon" />
         <a
           className="connectWallet-installMetamask"
           href={METAMASK_DEEPLINK}
           target="_blank"
         >
-          <img src="/svg/install.svg" />
+          <Image src="/svg/install.svg" preview={false} alt="install-icon" />
           <div>Install Metamask</div>
         </a>
       </div>

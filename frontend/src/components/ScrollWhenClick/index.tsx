@@ -71,14 +71,14 @@ export default function ScrollWhenClick({
           hidden: scrollLeft === 0,
         })}
       >
-        <Image src="/svg/arrow-right.svg" preview={false} />
+        <Image src="/svg/arrow-right.svg" preview={false} alt="arrow-left" />
       </div>
       <div
         onClick={scrollToRight}
         className={classNames('scroll-button', 'right')}
         ref={buttonRightRef}
       >
-        <Image src="/svg/arrow-right.svg" preview={false} />
+        <Image src="/svg/arrow-right.svg" preview={false} alt="arrow-right" />
       </div>
       <div ref={elementRef} className="scroll-children" style={{ gap: gap }}>
         {children}

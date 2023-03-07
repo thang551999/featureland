@@ -1,6 +1,6 @@
-import { AppState } from "../configStore";
+import { AppState } from '../configStore';
 
-const selectorConnection= {
+const selectorConnection = {
   getConnection: (state: AppState) => state.connection,
 };
 

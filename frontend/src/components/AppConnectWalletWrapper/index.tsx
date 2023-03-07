@@ -71,7 +71,7 @@ const AppConnectWalletWrapper = ({ children }: { children: ReactNode }) => {
     }
 
     window &&
-      (window as any)?.ethereum?.on('accountsChanged', (accounts: string[]) => {
+      window?.ethereum?.on('accountsChanged', (accounts: string[]) => {
         if (!accounts || accounts.length === 0) {
           handleLogout();
         }

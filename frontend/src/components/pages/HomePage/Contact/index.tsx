@@ -1,5 +1,5 @@
 import AppButton from '@/components/AppButton';
-import { Button, Col, Form, Input, Row } from 'antd';
+import { Col, Form, Input, Row } from 'antd';
 
 export default function ContactUs() {
   return (

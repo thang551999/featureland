@@ -1,4 +1,4 @@
-import { AppState } from "../configStore";
+import { AppState } from '../configStore';
 
 const selectorAuthentication = {
   getAuthentication: (state: AppState) => state.authentication,

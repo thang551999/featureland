@@ -24,6 +24,7 @@ export default function Community() {
         wrapperClassName="community-background"
         src="/images/community-background.png"
         preview={false}
+        alt="community-background"
       />
       <Image
         wrapperClassName="community-extra-image"
@@ -31,6 +32,7 @@ export default function Community() {
         preview={false}
         width={320}
         height={380}
+        alt="community-extra-image"
       />
       <div className="users">
         {listUsers.map((userImage, index: number) => (
@@ -39,6 +41,7 @@ export default function Community() {
             preview={false}
             wrapperClassName={`community-users user-${index}`}
             key={userImage}
+            alt="user"
           />
         ))}
       </div>

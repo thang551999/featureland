@@ -8,7 +8,7 @@ export const LIBRARY_CONSTANTS = {
         ? provider.chainId
         : typeof provider.chainId === 'string'
         ? parseInt(provider.chainId)
-        : 'any',
+        : 'any'
     );
 
     return library;

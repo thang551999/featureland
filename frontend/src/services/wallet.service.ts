@@ -9,7 +9,7 @@ export const getAuthority = async (
   library: Web3Provider | any,
   account: string,
   dispatch: AppDispatch,
-  hasLoading: boolean = false
+  hasLoading = false
 ) => {
   const hasVerify = ethers.utils.solidityKeccak256(['address'], [account]);
   const singerHashBytes = ethers.utils.arrayify(hasVerify);

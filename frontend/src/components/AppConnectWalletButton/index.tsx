@@ -14,7 +14,7 @@ export default function AppConnectWalletButton() {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    if (typeof (window as any).ethereum !== 'undefined') {
+    if (typeof window.ethereum !== 'undefined') {
       setInstalledMetamask(true);
     }
   }, []);

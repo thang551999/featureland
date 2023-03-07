@@ -9,7 +9,7 @@ declare const ButtonVarients: [
   'secondary',
   'disabled'
 ];
-declare type ButtonVarient = typeof ButtonVarients[number];
+declare type ButtonVarient = (typeof ButtonVarients)[number];
 
 type AppButtonProps = {
   variant?: ButtonVarient | undefined;
@@ -19,7 +19,7 @@ type AppButtonProps = {
   onClick?: MouseEventHandler<HTMLElement>;
   text: ReactNode;
   disabled?: boolean;
-  htmlType?: string | any;
+  htmlType?: 'button' | 'submit' | 'reset';
   loading?: boolean;
   href?: string;
 };

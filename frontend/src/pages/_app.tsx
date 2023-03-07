@@ -13,7 +13,7 @@ import '../styles/_app.scss';
 import AppConnectWalletWrapper from '@/components/AppConnectWalletWrapper';
 import { ConfigProvider } from 'antd';
 
-export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
+export type NextPageWithLayout<P = object, IP = P> = NextPage<P, IP> & {
   getLayout?: (page: ReactElement) => ReactNode;
 };
 

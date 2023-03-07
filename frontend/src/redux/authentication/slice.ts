@@ -1,10 +1,10 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { Authentication, IAction } from "../types";
+import { createSlice } from '@reduxjs/toolkit';
+import { Authentication, IAction } from '../types';
 
 const initialState: Authentication = {
   token: '',
   address: '',
-}
+};
 
 export const AuthenticationSlice = createSlice({
   name: 'authentication',
@@ -14,17 +14,17 @@ export const AuthenticationSlice = createSlice({
       return {
         ...state,
         token: action.payload,
-      }
+      };
     },
     setAddress: (state, action: IAction<string>) => {
       return {
         ...state,
         address: action.payload,
-      }
+      };
     },
     logout: () => {
       return initialState;
-    }
+    },
   },
 });
 

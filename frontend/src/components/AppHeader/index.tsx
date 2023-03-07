@@ -5,10 +5,13 @@ import { logout } from '@/redux/authentication/slice';
 import { useAppDispatch } from '@/hooks/useStore';
 import { shortenString } from '@/utils/helper';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
+import classNames from 'classnames';
 
 export default function AppHeader() {
   const { active, account, deactivate } = useWeb3React();
   const dispatch = useAppDispatch();
+  const router = useRouter();
 
   const handleLogout = () => {
     deactivate();
@@ -22,29 +25,29 @@ export default function AppHeader() {
     },
   ];
 
+  const pages = [
+    {"href": "./", "path": "/", "text": "Home"},
+    {"href": "https://dribbble.com/", "path": "/comunity", "text": "Comunity"},
+    {"href": "https://dribbble.com/", "path": "/our-teams", "text": "Our Teams"},
+    {"href": "https://dribbble.com/", "path": "/features", "text": "Features"},
+    {"href": "https://dribbble.com/", "path": "/contact", "text": "Contact Us"},
+  ]
+
   return (
     <Row className="app-header">
       <Col span={5} className="app-header__logo">
-        <Image src="/svg/LOGO.svg" alt="logo" preview={false} />
+        <Image width={55} height={15} alt="logo" src="/svg/LOGO.svg" />
       </Col>
-      <Col span={14} className="app-header__pages">
-        <Link href="https://dribbble.com/">
-          <span>Home</span>
-        </Link>
-        <Link href="https://instagram.com/">
-          <span>Community</span>
-        </Link>
-        <Link href="https://www.linkedin.com">
-          <span>Our Teams</span>
-        </Link>
-        <Link href="https://www.linkedin.com">
-          <span>Features</span>
-        </Link>
-        <Link href="https://www.linkedin.com">
-          <span>Contact Us</span>
-        </Link>
+      <Col span={10} className="app-header__pages" offset={1}>
+        {pages.map((item, index) => <Link
+          key={index}
+          href={item.href}
+          className={classNames("app-header__pages__text", { active_page: router.asPath === item.path })}>
+            {item.text}
+          </Link>
+        )}
       </Col>
-      <Col span={4} offset={1} className="app-header__button">
+      <Col span={5} className="app-header__button" offset={3}>
         {active && account ? (
           <Dropdown trigger={['click']} menu={{ items }}>
             <div className="app-header-dropdown">

@@ -43,9 +43,7 @@ $color_disabled_button_border: transparent;
   &:focus,
   &:active,
   &:hover {
-    outline: none;
-    box-shadow: none;
-    border: none;
+    opacity: 0.8;
   }
 
   &:disabled {
@@ -103,9 +101,8 @@ $color_disabled_button_border: transparent;
     &:focus,
     &:active,
     &:hover {
-      background-color: $color_primary_button_background;
+      opacity: 0.8;
       color: $color_primary_button;
-      border: 1px solid $color_primary_button_border;
     }
 
     &:disabled {

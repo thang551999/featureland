@@ -33,6 +33,7 @@ export default function HomePageThumbnail() {
                   justifyContent: 'center',
                   marginLeft: 24,
                   display: 'flex',
+                  height: 48,
                 }}
               >
                 Try it now

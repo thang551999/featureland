@@ -38,4 +38,16 @@
       letter-spacing: 1.25px;
     }
   }
+  .app-header-dropdown {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    .app-header-avatar {
+      margin-right: 14px;
+    }
+    .app-header-more {
+      margin-left: 24px;
+      transform: rotate(90deg);
+    }
+  }
 }

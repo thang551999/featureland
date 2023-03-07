@@ -1,9 +1,7 @@
-import AboutTeams from '@/components/pages/HomePage/AboutTeams';
-import Community from '@/components/pages/HomePage/Community';
-import ContactUs from '@/components/pages/HomePage/Contact';
-import DiscoverAreas from '@/components/pages/HomePage/DiscoverAreas';
-import HomePageThumbnail from '@/components/pages/HomePage/Thumbnail';
 import { ReactElement } from 'react';
+import Community from '@/components/pages/HomePage/Community';
+import DiscoverAreas from '@/components/DiscoverAreas';
+import HomePageThumbnail from '@/components/pages/HomePage/Thumbnail';
 import GeneralLayout from '../layout/General';
 
 function HomePage() {
@@ -12,8 +10,8 @@ function HomePage() {
       <HomePageThumbnail />
       <DiscoverAreas />
       <Community />
-      <AboutTeams />
-      <ContactUs />
+      {/* <AboutTeams />
+      <ContactUs /> */}
     </div>
   );
 }

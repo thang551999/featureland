@@ -11,6 +11,7 @@ const nextConfig = {
   },
   env: {
     NEXT_PUBLIC_CHAIN_ID: 97,
+    API_ENDPOINT: 'http://139.177.189.219:5001',
   },
 };
 

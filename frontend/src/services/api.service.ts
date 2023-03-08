@@ -42,7 +42,7 @@ const _delete = async (url: string, body?: any) => {
   return invoke('delete', url, body);
 };
 
-export default {
+const api = {
   get: _get,
   post: _post,
   put: _put,
@@ -50,3 +50,5 @@ export default {
   addToken: addToken,
   removeToken: removeToken,
 };
+
+export default api;

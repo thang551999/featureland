@@ -7,7 +7,7 @@ export default function AppFooter() {
   const router = useRouter();
 
   const pages = [
-    { href: './', path: '/', text: 'Home' },
+    { href: '/', path: '/', text: 'Home' },
     { href: 'https://dribbble.com/', path: '/about', text: 'About Us' },
     { href: 'https://dribbble.com/', path: '/pricing', text: 'Pricing' },
     { href: 'https://dribbble.com/', path: '/features', text: 'Features' },
@@ -37,7 +37,13 @@ export default function AppFooter() {
       <div className="footer__content">
         <Row className="footer__content__links" justify="space-around">
           <Col md={2} lg={3} className="footer__content__links__logo">
-            <Image height={15} width={55} alt="logo" src="/svg/LOGO.svg" />
+            <Image
+              height={15}
+              width={55}
+              alt="logo"
+              src="/svg/LOGO.svg"
+              preview={false}
+            />
           </Col>
           <Col
             md={24}

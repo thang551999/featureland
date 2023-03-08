@@ -1,18 +1,20 @@
 import Image from 'next/image';
 import { ReactNode, useEffect } from 'react';
 import { useWeb3React } from '@web3-react/core';
-import ModalWrongNetwork from '@/components/Modal/WrongNetwork';
 import { logout } from '@/redux/authentication/slice';
+import ModalWrongNetwork from '@/components/Modal/WrongNetwork';
+import ModalInstallMetamask from '@/components/Modal/InstallMetamask';
 import { setWrongNetwork } from '@/redux/connection/slice';
+import selectorConnection from '@/redux/connection/selector';
 import selectorApplication from '@/redux/application/selector';
-import { useAppDispatch, useAppSelector } from '@/hooks/useStore';
 import selectorAuthentication from '@/redux/authentication/selector';
+import api from '@/services/api.service';
+import { useAuthenticate } from '@/hooks/home';
 import { injected } from '@/constants/connectors';
 import { isSupportChainId } from '@/utils/wallet';
 import { getAuthority } from '@/services/wallet.service';
 import LocalStorageService from '@/services/localStorage.service';
-import ModalInstallMetamask from '../Modal/InstallMetamask';
-import selectorConnection from '@/redux/connection/selector';
+import { useAppDispatch, useAppSelector } from '@/hooks/useStore';
 
 const AppConnectWalletWrapper = ({ children }: { children: ReactNode }) => {
   const dispatch = useAppDispatch();
@@ -25,6 +27,7 @@ const AppConnectWalletWrapper = ({ children }: { children: ReactNode }) => {
   const { address, token } = useAppSelector(
     selectorAuthentication.getAuthentication
   );
+  const { mutate: auth } = useAuthenticate(dispatch);
 
   const handleLogout = () => {
     deactivate();
@@ -41,6 +44,7 @@ const AppConnectWalletWrapper = ({ children }: { children: ReactNode }) => {
       handleLogout();
     } else if (signerVerify) {
       LocalStorageService.addSigner(account, signerVerify);
+      auth({ walletAddress: account, signature: signerVerify });
     }
   };
 
@@ -61,11 +65,14 @@ const AppConnectWalletWrapper = ({ children }: { children: ReactNode }) => {
   // relogin when refresh and log out when log account
   useEffect(() => {
     if (token) {
-      try {
-        activate(injected);
-      } catch (e) {
-        handleLogout();
-      }
+      setTimeout(() => {
+        try {
+          activate(injected);
+          api.addToken(token);
+        } catch (e) {
+          handleLogout();
+        }
+      }, 500);
     } else {
       handleLogout();
     }

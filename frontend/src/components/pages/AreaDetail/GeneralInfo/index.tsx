@@ -1,3 +1,4 @@
+import { DEFAULT_VALUE } from '@/constants';
 import { Col, Image, Row, Tabs } from 'antd';
 
 type AreaInfo = {
@@ -10,12 +11,12 @@ type AreaInfo = {
 };
 
 export default function AreaGeneralInfo({
-  srcImage,
-  plotsAvailable,
-  totalPlots,
-  totalNfts,
-  description,
-  name,
+  srcImage = DEFAULT_VALUE.IMAGE_SRC,
+  plotsAvailable = 0,
+  totalPlots = 0,
+  totalNfts = 0,
+  description = 'No Description',
+  name = 'No Name',
 }: AreaInfo) {
   const tabItems = [
     {

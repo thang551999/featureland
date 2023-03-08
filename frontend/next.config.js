@@ -13,6 +13,15 @@ const nextConfig = {
     NEXT_PUBLIC_CHAIN_ID: 97,
     API_ENDPOINT: 'http://139.177.189.219:5001',
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'http',
+        hostname: '139.177.189.219',
+        port: '5001',
+      },
+    ],
+  },
 };
 
 module.exports = nextConfig;

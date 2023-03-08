@@ -26,7 +26,7 @@ export default function AppHeader() {
   ];
 
   const pages = [
-    { href: './', path: '/', text: 'Home' },
+    { href: '/', path: '/', text: 'Home' },
     { href: 'https://dribbble.com/', path: '/comunity', text: 'Comunity' },
     { href: 'https://dribbble.com/', path: '/our-teams', text: 'Our Teams' },
     { href: 'https://dribbble.com/', path: '/features', text: 'Features' },
@@ -36,7 +36,13 @@ export default function AppHeader() {
   return (
     <Row className="app-header">
       <Col span={5} className="app-header__logo">
-        <Image width={55} height={15} alt="logo" src="/svg/LOGO.svg" />
+        <Image
+          width={55}
+          height={15}
+          alt="logo"
+          src="/svg/LOGO.svg"
+          preview={false}
+        />
       </Col>
       <Col span={10} className="app-header__pages" offset={1}>
         {pages.map((item, index) => (
@@ -53,7 +59,11 @@ export default function AppHeader() {
       </Col>
       <Col span={5} className="app-header__button" offset={3}>
         {active && account ? (
-          <Dropdown trigger={['click']} menu={{ items }}>
+          <Dropdown
+            trigger={['click']}
+            menu={{ items }}
+            rootClassName="app-header-dropdown-open"
+          >
             <div className="app-header-dropdown">
               <Image
                 wrapperClassName="app-header-avatar"

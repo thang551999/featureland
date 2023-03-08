@@ -4,9 +4,12 @@
   padding: 11px 16px 20px;
   box-shadow: 0px 2px 0px #848484;
   .plot-image {
-    border: 1px solid #6d7280;
-    background-color: white;
-    border-radius: 6px;
+    width: 100%;
+    img {
+      border: 1px solid #6d7280;
+      background-color: white;
+      border-radius: 6px;
+    }
   }
   .plot-id {
     font-size: 18px;
@@ -26,6 +29,7 @@
 }
 
 .area-detail {
+  padding-bottom: 120px;
   .ant-breadcrumb {
     margin-left: 115px;
     margin-top: 52px;
@@ -57,7 +61,7 @@
     margin-bottom: 90px;
   }
   .area-select {
-    width: fit-content;
+    width: 160px;
   }
   .area-thumbnail-img {
     width: 100%;

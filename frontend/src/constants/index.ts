@@ -5,4 +5,4 @@ export const LOCAL_STORAGE = {
 export const WEB_URL = {
   HOME: '/',
   AREA_DETAIL: '/area/',
-}
+};

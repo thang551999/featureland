@@ -1,4 +1,4 @@
-import { Col, Dropdown, Image, MenuProps, Popover, Row } from 'antd';
+import { Col, Dropdown, Image, MenuProps, Row } from 'antd';
 import { useWeb3React } from '@web3-react/core';
 import AppConnectWalletButton from '@/components/AppConnectWalletButton';
 import { logout } from '@/redux/authentication/slice';
@@ -26,12 +26,12 @@ export default function AppHeader() {
   ];
 
   const pages = [
-    {"href": "./", "path": "/", "text": "Home"},
-    {"href": "https://dribbble.com/", "path": "/comunity", "text": "Comunity"},
-    {"href": "https://dribbble.com/", "path": "/our-teams", "text": "Our Teams"},
-    {"href": "https://dribbble.com/", "path": "/features", "text": "Features"},
-    {"href": "https://dribbble.com/", "path": "/contact", "text": "Contact Us"},
-  ]
+    { href: './', path: '/', text: 'Home' },
+    { href: 'https://dribbble.com/', path: '/comunity', text: 'Comunity' },
+    { href: 'https://dribbble.com/', path: '/our-teams', text: 'Our Teams' },
+    { href: 'https://dribbble.com/', path: '/features', text: 'Features' },
+    { href: 'https://dribbble.com/', path: '/contact', text: 'Contact Us' },
+  ];
 
   return (
     <Row className="app-header">
@@ -39,13 +39,17 @@ export default function AppHeader() {
         <Image width={55} height={15} alt="logo" src="/svg/LOGO.svg" />
       </Col>
       <Col span={10} className="app-header__pages" offset={1}>
-        {pages.map((item, index) => <Link
-          key={index}
-          href={item.href}
-          className={classNames("app-header__pages__text", { active_page: router.asPath === item.path })}>
+        {pages.map((item, index) => (
+          <Link
+            key={index}
+            href={item.href}
+            className={classNames('app-header__pages__text', {
+              active_page: router.asPath === item.path,
+            })}
+          >
             {item.text}
           </Link>
-        )}
+        ))}
       </Col>
       <Col span={5} className="app-header__button" offset={3}>
         {active && account ? (

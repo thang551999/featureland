@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { ReactElement, useState } from 'react';
-import { Breadcrumb, Col, Dropdown, Pagination, Row, Select } from 'antd';
+import { Breadcrumb, Col, Pagination, Row, Select } from 'antd';
 import DiscoverAreas from '@/components/DiscoverAreas';
 import AreaFilter from '@/components/pages/AreaDetail/Filter';
 import AreaGeneralInfo from '@/components/pages/AreaDetail/GeneralInfo';
@@ -10,8 +10,8 @@ import GeneralLayout from '@/layout/General';
 import { WEB_URL } from '@/constants';
 
 function AreaDetail() {
-  const [page, setPage] = useState(1);
-  const [pageSize, setPageSize] = useState(16);
+  const [page] = useState(1);
+  const [pageSize] = useState(16);
   const total = 1000;
   const data: PlotProps[] = [
     {
@@ -71,7 +71,7 @@ function AreaDetail() {
         </Col>
         <Col lg={18} md={24}>
           <Row justify={'space-between'} className="area-plot-listing">
-            <Col className="title">Plot's Listing</Col>
+            <Col className="title">Plot&#39;s Listing</Col>
             <Col>
               <Select className="area-select" options={selectItems} />
             </Col>
